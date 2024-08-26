@@ -18,3 +18,9 @@ dessert_listing <- dessert_elements %>%
   head(.,-3) %>%               # 3 last ones were not desserts 
   rowid_to_column("rank") %>%  # adding a column using the row number as a proxy for the rank
   write_csv("data/iconic_desserts.csv") # save it as csv
+
+if (any(str_detect(dessert_listing, "salsa"))){
+  print("Theres some kind of cookie")
+} else{
+  print("No dice...")
+}
